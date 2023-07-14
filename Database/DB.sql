@@ -1,0 +1,9 @@
+CREATE SEQUENCE SEQ_PRODUCTS_ID START WITH 1 INCREMENT BY 1 NOCYCLE ORDER;
+CREATE TABLE "Products"
+(
+    "Id"            NUMBER DEFAULT SEQ_PRODUCTS_ID.nextval,
+    "Name"          VARCHAR2(256),
+    "Price"         NUMBER,
+    "PurchaseCount" NUMBER,
+    CONSTRAINT PK_PRODUCTS PRIMARY KEY ("Id")
+);
