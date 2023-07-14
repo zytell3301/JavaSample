@@ -1,9 +1,7 @@
 package com.example.sample.DataAccess.Repositories.Products;
 
-import Entities.Products.ProductStatistics;
+import com.example.sample.Entities.Products.ProductStatistics;
 import com.example.sample.Common.Exceptions.RecordNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 
@@ -34,6 +32,6 @@ public class ProductsDataAccess implements com.example.sample.DataAccess.Abstrac
         if (statistics.AveragePrice == null || statistics.Count == null) {
             throw recordNotFoundException;
         }
-        return new Entities.Products.ProductStatistics(productName, statistics.Count, statistics.AveragePrice);
+        return new ProductStatistics(productName, statistics.Count, statistics.AveragePrice);
     }
 }
